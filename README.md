@@ -90,6 +90,7 @@ require('mason-conform').setup({
 Simple alternative configuration can that can be used as a stand alone file to be called in your NeoVim `init.lua` #NOTE: make sure to call setup after `mason.nvim` and `conform.nvim` have been loaded see [load order](load-order)Or see below example to use it as part of your `mason.nvim` lua file.
 
 ```lua
+-- mason.lua
 local M = {
     "williamboman/mason.nvim",
     event = {}, -- optinal events
