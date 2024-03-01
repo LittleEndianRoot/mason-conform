@@ -1,6 +1,6 @@
-# mason-conform.nvim
+# mason-conform
 
-`mason-conform.nvim` is a Neovim plugin used as a bridging handler between `mason.nvim` and `conform.nvim`. 
+`mason-conform` is a Neovim plugin used as a bridging handler between `mason.nvim` and `conform.nvim`. 
 It allows automatic checking and installation of formatters in the `mason.nvim` registry and `conform.nvim` configuration. 
 
 ## Requirements
@@ -17,7 +17,7 @@ It allows automatic checking and installation of formatters in the `mason.nvim` 
 {
     "williamboman/mason.nvim",
     "stevearc/conform.nvim",
-    "LittleEndianRoot/mason-conform.nvim",
+    "LittleEndianRoot/mason-conform",
 }
 ```
 
@@ -27,7 +27,7 @@ It allows automatic checking and installation of formatters in the `mason.nvim` 
 use {
     "williamboman/mason.nvim",
     "stevearc/conform.nvim",
-    "LittleEndianRoot/mason-conform.nvim"
+    "LittleEndianRoot/mason-conform"
 }
 ```
 
@@ -37,9 +37,9 @@ It's crucial to setup plugins in the following order:
 
 1. `mason.nvim`
 2. `conform.nvim`
-3. `mason-conform.nvim`
+3. `mason-conform`
 
-Otherwise `mason-conform.nvim` will not have enough information about configured formatters and
+Otherwise `mason-conform` will not have enough information about configured formatters and
 access to the mason registry.
 
 To learn about the available settings and configurations, please refer the [Configuration](#configuration) section.
@@ -195,5 +195,5 @@ Here is a list of just Formatters from the Mason registry:
 ```
 
 ## Copyright
-I needed a working helper to installed mason formatters automatically without manual intervention (after initial configuration). So it is no surprise that `mason-conform.nvim` is a copy of another great plugin with the same functionality only for linters called [mason-nvim-lint](https://github.com/rshkarin/mason-nvim-lint) 
+I needed a working helper to installed mason formatters automatically without manual intervention (after initial configuration). So it is no surprise that `mason-conform` is a copy of another great plugin with the same functionality only for linters called [mason-nvim-lint](https://github.com/rshkarin/mason-nvim-lint) 
 `mason-nvim-lint` is in itself inspired from [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
