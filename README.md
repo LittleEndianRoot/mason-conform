@@ -109,7 +109,7 @@ M.formatters = {
 }
 
 function M.config()
-    ---[[
+    --[[
         other mason setup code
     ]]--
     local m_conform = require("mason-conform")
