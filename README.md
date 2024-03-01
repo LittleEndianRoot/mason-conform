@@ -6,8 +6,8 @@ It allows automatic checking and installation of formatters in the `mason.nvim` 
 ## Requirements
 
 -   neovim `>= 0.7.0`
--   ['mason.nvim'](https://github.com/williamboman/mason.nvim)
--   ['conform.nvim'](https://github.com/stevearc/conform.nvim)
+-   [mason.nvim](https://github.com/williamboman/mason.nvim)
+-   [conform.nvim](https://github.com/stevearc/conform.nvim)
 
 # Install
 
@@ -27,7 +27,7 @@ It allows automatic checking and installation of formatters in the `mason.nvim` 
 use {
     "williamboman/mason.nvim",
     "stevearc/conform.nvim",
-    "LittleEndianRoot/mason-conform"
+    "LittleEndianRoot/mason-conform",
 }
 ```
 
@@ -81,25 +81,47 @@ NOTE: The formatters in `ensure_installed` should be written in the format of ma
 
 ```lua
 require('mason-conform').setup({
-    ensure_installed = { 'black', "prettier" },
+    ensure_installed = { "black", "prettier" },
 })
 ```
 
-#### Another Customisation
+#### Alternative Customisation
+
+Simple alternative configuration can that can be used as a stand alone file to be called in your NeoVim `init.lua` #NOTE: make sure to call setup after `mason.nvim` and `conform.nvim` have been loaded see [load order](load-order)Or see below example to use it as part of your `mason.nvim` lua file.
 
 ```lua
+local M = {
+    "williamboman/mason.nvim",
+    event = {}, -- optinal events
+    dependencies = {
+        { "williamboman/mason-lspconfig.nvim", event = {} },
+        { "stevearc/conform.nvim", event = {} },
+        { "LittleEndianRoot/mason-conform", event = {} },
+    },
+}
+
+--[[
+    list whatever mason registry formatter below
+]]--
 M.formatters = {
-    'black',
-    'prettier',
+    "black",
+    "prettier",
 }
 
 function M.config()
+    ---[[
+        other mason setup code
+    ]]--
     local m_conform = require("mason-conform")
 
     m_conform.setup({
         ensure_installed = M.formatters,
+        automatic_installation = false,
+        quiet_mode = false,
     })
 end
+
+return M
 ```
 
 ## Mason formatters registry
