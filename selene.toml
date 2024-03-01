@@ -1,0 +1,5 @@
+std="lua51+vim"
+
+[rules]
+usused_variable = "allow"
+shadowing = "allow"
