@@ -218,5 +218,5 @@ Here is a list of just Formatters from the Mason registry:
 ```
 
 ## Copyright
-I needed a working helper to installed mason formatters automatically without manual intervention (after initial configuration). So it is no surprise that `mason-conform` is a copy of another great plugin with the same functionality only for linters called [mason-nvim-lint](https://github.com/rshkarin/mason-nvim-lint) 
+I needed a working helper to install mason formatters automatically without manual intervention (after initial configuration). So it is no surprise that `mason-conform` is a copy of another great plugin with the same functionality only for linters called [mason-nvim-lint](https://github.com/rshkarin/mason-nvim-lint) 
 `mason-nvim-lint` is in itself inspired from [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
